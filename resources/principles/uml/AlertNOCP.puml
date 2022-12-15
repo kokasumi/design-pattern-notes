@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Rule {
+    - api : String
+    - maxTps : Long
+    - maxErrorCount : Long
+}
+enum NotificationEmergencyLevel {
+    + SEVERE
+    + URGENCY
+    + NORMAL
+    + TRIVIAL
+}
+class Notification {
+    + notify(level : NotificationEmergencyLevel, msg : String) : void
+}
+NotificationEmergencyLevel <... Notification
+class AlertRule {
+    - rules : List<Rule>
+    + getMatchedRule(api : String) : Rule
+}
+Rule <--- AlertRule
+class Alert {
+    - rule : AlertRule
+    - notification : Notification
+    + check(api : String, requestCount : long, errorCount : long, durationOfSeconds : long) : void
+}
+AlertRule <--- Alert
+Notification <--- Alert
+note bottom of Alert: 所有的业务逻辑都放到check方法中，新增或者删除规则时，都需要对check方法进行改动
+@enduml

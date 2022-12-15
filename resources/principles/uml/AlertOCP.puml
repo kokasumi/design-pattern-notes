@@ -1,0 +1,64 @@
+@startuml
+class ApiStatInfo {
+    - api : String
+    - requestCount : long
+    - errorCount : long
+    - durationOfSeconds : long
+}
+note top of ApiStatInfo: 封装check参数
+class Rule {
+    - api : String
+    - maxTps : Long
+    - maxErrorCount : Long
+}
+enum NotificationEmergencyLevel {
+    + SEVERE
+    + URGENCY
+    + NORMAL
+    + TRIVIAL
+}
+class Notification {
+    + notify(level : NotificationEmergencyLevel, msg : String) : void
+}
+NotificationEmergencyLevel <... Notification
+class AlertRule {
+    - rules : List<Rule>
+    + getMatchedRule(api : String) : Rule
+}
+Rule <--- AlertRule
+abstract class AlertHandler {
+    # rule : AlertRule
+    # notification : Notification
+    + {abstract} check(apiStatInfo : ApiStatInfo) : void
+}
+AlertRule <--- AlertHandler
+Notification <--- AlertHandler
+ApiStatInfo <... AlertHandler
+note right of AlertHandler: handler处理告警逻辑
+class Alert {
+    - alertHandlers : List<AlertHandler>
+    + addAlertHandler(alertHandler : AlertHandler) : void
+    + check(apiStatInfo : ApiStatInfo) : void
+}
+AlertHandler <--left- Alert
+ApiStatInfo <--- Alert
+class TpsAlertHandler extends AlertHandler {
+}
+note bottom of TpsAlertHandler: 检测接口tps是否超过阈值
+class ErrorAlertHandler extends AlertHandler {
+}
+note bottom of ErrorAlertHandler: 检测接口出错数是否超过阈值
+class ApplicationContext {
+    - alertRule : AlertRule
+    - notification : Notification
+    - alert : Alert
+    - {static} instance : ApplicationContext
+    + initializeBeans() : void
+    + getAlert() : Alert
+    + {static} getInstance() : ApplicationContext
+}
+Alert <--- ApplicationContext
+note left of ApplicationContext::initializeBeans
+    负责Alert创建、组装和初始化工作
+end note
+@enduml
