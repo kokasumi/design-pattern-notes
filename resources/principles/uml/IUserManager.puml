@@ -1,0 +1,12 @@
+@startuml
+interface IUserManager {
+    + changeUser( userBO : IUserBO,changeOptions : String...) : void
+}
+note bottom of IUserManager: 一个方法承担多个职责
+interface IUserManagerSrp {
+    + void changeUserName(String newUserName);
+    + void changeHomeAddress(String newHomeAddress);
+    + void changeOfficeTel(String telNumber);
+}
+note bottom of IUserManagerSrp: 一个方法承担一个职责，推荐
+@enduml
