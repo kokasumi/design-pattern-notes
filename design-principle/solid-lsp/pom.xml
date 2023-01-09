@@ -9,12 +9,26 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>solid-ocp</artifactId>
+    <artifactId>solid-lsp</artifactId>
     <packaging>jar</packaging>
-    <description>SOLID设计原则：开闭原则（OCP）</description>
+    <description>SOLID设计原则：里氏替换原则（LSP）</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <!-- apache httpclient组件 -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.8</version>
+        </dependency>
+    </dependencies>
 </project>

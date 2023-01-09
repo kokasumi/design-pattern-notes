@@ -1,8 +1,9 @@
 package com.github.kokasumi.neg;
 
-import com.github.kokasumi.design.principles.ocp.alert.AlertRule;
-import com.github.kokasumi.design.principles.ocp.alert.Notification;
-import com.github.kokasumi.design.principles.ocp.alert.NotificationEmergencyLevel;
+
+import com.github.kokasumi.AlertRule;
+import com.github.kokasumi.Notification;
+import com.github.kokasumi.NotificationEmergencyLevel;
 
 /**
  * @version v1.0

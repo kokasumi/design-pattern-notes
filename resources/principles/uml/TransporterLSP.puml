@@ -1,0 +1,12 @@
+@startuml
+class Transporter {
+ - httpClient : HttpClient;
+ + Transporter(httpClient : HttpClient);
+ + sendRequest(request : HttpUriRequest) : HttpResponse;
+}
+class SecurityTransporter extends Transporter {
+ - appId : String;
+ - appToken : String;
+ + SecurityTransporter(httpClient : HttpClient, appId : String, appToken : String);
+}
+@enduml

@@ -20,5 +20,6 @@
     <modules>
         <module>solid-srp</module>
         <module>solid-ocp</module>
+        <module>solid-lsp</module>
     </modules>
 </project>
