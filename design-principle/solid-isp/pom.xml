@@ -3,24 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>design-pattern-notes</artifactId>
+        <artifactId>design-principle</artifactId>
         <groupId>com.github.kokasumi</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>design-principle</artifactId>
-    <packaging>pom</packaging>
-    <description>设计模式：设计原则笔记</description>
+    <artifactId>solid-isp</artifactId>
+    <packaging>jar</packaging>
+    <description>SOLID设计原则：接口隔离原则（ISP）</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-    <modules>
-        <module>solid-srp</module>
-        <module>solid-ocp</module>
-        <module>solid-lsp</module>
-        <module>solid-isp</module>
-    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.smallrye.config</groupId>
+            <artifactId>smallrye-config-source-zookeeper</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+    </dependencies>
 </project>

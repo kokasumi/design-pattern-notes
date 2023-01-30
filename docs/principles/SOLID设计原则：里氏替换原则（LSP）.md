@@ -97,7 +97,7 @@ public class SecurityTransporter extends Transporter {
 
 在上述代码设计中，如果使用 子类 `SecurityTransporter` 替换父类 `Transporter` ，在使用 `sendRequest()` 方法发送请求时，可能会抛出 `NoAuthorizationRuntimeException` 异常，在调用逻辑处需要单独处理抛出的异常，这样就破坏了程序代码的稳定性，不符合 里氏替换原则 。
 
-具体实现代码可见[SecurityTranspoter 不符合里氏替换原则设计](../../design-principle/solid-lsp/src/main/java/com/github/kokasumi/neg)
+具体实现代码可见[SecurityTranspoter 不符合里氏替换原则设计](../../design-principle/solid-lsp/src/main/java/com/github/kokasumi/neg/SecurityTransporter.java)
 
 ## 符合里氏替换原则设计 
 
@@ -126,7 +126,7 @@ public class SecurityTransporter extends Transporter {
 
 在上面的代码中，子类 `SecurityTransporter` 的设计完全符合里氏替换原则，可以替换父类出现的任何位置，并且不会破坏原有代码的稳定性。
 
-具体实现代码可见[SecurityTranspoter 符合里氏替换原则设计](../../design-principle/solid-lsp/src/main/java/com/github/kokasumi/pos)
+具体实现代码可见[SecurityTranspoter 符合里氏替换原则设计](../../design-principle/solid-lsp/src/main/java/com/github/kokasumi/pos.java)
 
 # 总结
 

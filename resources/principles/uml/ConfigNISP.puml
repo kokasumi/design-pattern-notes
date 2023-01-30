@@ -1,0 +1,12 @@
+@startuml
+interface Config {
+ + update() : void;
+ + outputInPlainText() : String;
+ + output() : Map<String,String>;
+}
+class KafkaConfig implements Config {}
+note bottom of KafkaConfig: 无需在Web端查看配置，有冗余方法outputInPlainText()/output()
+class RedisConfig implements Config {}
+class MySqlConfig implements Config {}
+note bottom of MySqlConfig: 无需热更新，有冗余方法update()
+@enduml

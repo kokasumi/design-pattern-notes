@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+interface Updater {
+ + update() : void;
+}
+note top of Updater: 热更新功能接口
+interface Viewer {
+ + outputInPlainText() : String;
+ + output() : Map<String,String>;
+}
+note top of Viewer: 暴露配置信息接口
+class KafkaConfig implements Updater{}
+class RedisConfig implements Updater,Viewer{}
+class MySqlConfig implements Viewer {}
+@enduml
