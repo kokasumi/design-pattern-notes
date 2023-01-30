@@ -1,0 +1,10 @@
+@startuml
+class Book {
+ + getContent() : String;
+}
+class Mother {
+ + narrate(book : Book) : void;
+}
+Book <.. Mother
+note right of Mother: 依赖于Book
+@enduml

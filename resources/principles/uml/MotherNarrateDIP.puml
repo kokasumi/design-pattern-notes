@@ -1,0 +1,12 @@
+@startuml
+interface IReader {
+ + getContent() : String;
+}
+class Book implements IReader {}
+class NewsPaper implements IReader {}
+class Mother {
+ + narrate(reader : IReader) : void;
+}
+IReader <.left. Mother
+note bottom of Mother: 依赖于IReader，能够读取所有IReader实现类
+@enduml

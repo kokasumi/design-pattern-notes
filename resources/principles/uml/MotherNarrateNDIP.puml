@@ -1,0 +1,13 @@
+@startuml
+class Book {
+ + getContent() : String;
+}
+class NewsPaper {
+ + getContent() : String;
+}
+class Mother {
+ + narrate(book : Book) : void;
+}
+Book <.. Mother
+note right of Mother: 依赖于Book，只会读Book上的故事
+@enduml

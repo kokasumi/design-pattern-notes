@@ -1,0 +1,5 @@
+@startuml
+skinparam componentStyle rectangle
+
+[低层组件] <.left. [高层组件]
+@enduml
