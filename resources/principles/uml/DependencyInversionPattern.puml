@@ -2,6 +2,6 @@
 skinparam componentStyle rectangle
 
 interface 抽象层
-[低层组件] <|..left.抽象层
+[低层组件] ..left.|> 抽象层
 抽象层 <..left. [高层组件]
 @enduml
