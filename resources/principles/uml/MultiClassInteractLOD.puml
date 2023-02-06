@@ -1,0 +1,11 @@
+@startuml
+skinparam componentStyle rectangle
+[D] <-up- [A]
+[A] <-up- [G]
+
+[H] <-up- [B]
+[B] <-up- [E]
+
+[I] <-up- [C]
+[C] <-up- [F]
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class Student {
+    - id : Long;
+    - name : String;
+
+    + getId() : Long;
+    + setId(id : Long) : void;
+    + getName() : String;
+    + setName(name : String) : void;
+}
+class Class {
+    - id : Long;
+    - name : String;
+    - students : List<Student>;
+
+    + getId() : Long;
+    + setId(id : Long) : void;
+    + getName() : String;
+    + setName(name : String) : void;
+}
+Student ---righto Class: 聚合
+class School {
+    - List<Class> classes;
+    + void printStudents();
+}
+Class ---downo School: 聚合
+Student <...down School: 依赖
+note right of School: 学校依赖学生，打印学生名字，违反了迪米特原则
+@enduml
