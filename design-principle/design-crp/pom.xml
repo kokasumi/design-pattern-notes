@@ -3,27 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>design-pattern-notes</artifactId>
+        <artifactId>design-principle</artifactId>
         <groupId>com.github.kokasumi</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>design-principle</artifactId>
-    <packaging>pom</packaging>
-    <description>设计模式：设计原则笔记</description>
+    <artifactId>design-crp</artifactId>
+    <packaging>jar</packaging>
+    <description>合成复用原则（CRP）</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-    <modules>
-        <module>solid-srp</module>
-        <module>solid-ocp</module>
-        <module>solid-lsp</module>
-        <module>solid-isp</module>
-        <module>solid-dip</module>
-        <module>solid-lod</module>
-        <module>design-</module>
-    </modules>
+
 </project>

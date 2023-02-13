@@ -1,0 +1,18 @@
+@startuml
+enum Color{
+ - color:String;
+ + getColor():String;
+}
+enum PowerSource {
+ - source:String;
+ + getSource():String;
+}
+class Car{
+ - color : Color;
+ - powerSource : PowerSource;
+ + move() : void;
+}
+Car *-left- Color
+Car *-right- PowerSource
+note top of Car: 扩展只需要在Color和PowerSource中添加枚举值即可
+@enduml

@@ -6,5 +6,4 @@ skinparam componentStyle rectangle
 [C] <-up- [G I]
 [E F] <-up- [C]
 [E F] <-up- [A B]
-[C] <-up- [H]
 @enduml

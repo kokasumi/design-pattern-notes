@@ -1,0 +1,14 @@
+@startuml
+class Car{
+    + move() : void;
+}
+note left of Car: 使用继承复用实现
+class GasolineCar extends Car{}
+class ElectricCar extends Car{}
+class WhiteGasolineCar extends GasolineCar{}
+class BlackGasolineCar extends GasolineCar{}
+class RedGasolineCar extends GasolineCar {}
+class WhiteElectricCar extends ElectricCar{}
+class BlackElectricCar extends ElectricCar{}
+class RedElectricCar extends ElectricCar{}
+@enduml
