@@ -1,0 +1,23 @@
+@startuml
+interface Keyboard {
+ + print() : void;
+}
+class HPKeyboard {}
+Keyboard <|.down.. HPKeyboard
+class DellKeyboard {}
+Keyboard <|.down.. DellKeyboard
+class LenovoKeyboard {}
+Keyboard <|.down.. LenovoKeyboard
+interface KeyboardFactory{
+ + getInstance() : Keyboard;
+}
+class HPKeyboardFactory {}
+class DellKeyboardFactory {}
+class LenovoKeyboardFactory {}
+KeyboardFactory <|.up.. HPKeyboardFactory
+KeyboardFactory <|.up.. DellKeyboardFactory
+KeyboardFactory <|.up.. LenovoKeyboardFactory
+HPKeyboard <.down.. HPKeyboardFactory
+DellKeyboard <.down.. DellKeyboardFactory
+LenovoKeyboard <.down.. LenovoKeyboardFactory
+@enduml

@@ -2,20 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>creational-pattern</artifactId>
+        <groupId>com.github.kokasumi</groupId>
+        <version>1.0.0</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.kokasumi</groupId>
-    <artifactId>design-pattern-notes</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
-    <description>设计模式学习笔记</description>
+    <artifactId>factory-method</artifactId>
+    <packaging>jar</packaging>
+    <description>创建型模式：工厂方法模式（Factory Method Pattern）</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-    <modules>
-        <module>design-principle</module>
-        <module>creational-pattern</module>
-    </modules>
 </project>

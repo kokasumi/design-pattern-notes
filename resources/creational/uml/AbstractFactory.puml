@@ -1,0 +1,33 @@
+@startuml
+interface ProductA {}
+note left of ProductA: 抽象产品A
+interface ProductB {}
+note left of ProductB: 抽象产品B
+class ConcreteProductA1 {}
+ProductA <|.down. ConcreteProductA1
+note right of ConcreteProductA1: 具体产品A1
+class ConcreteProductA2 {}
+ProductA <|.down. ConcreteProductA2
+note right of ConcreteProductA2: 具体产品A2
+class ConcreteProductB1 {}
+ProductB <|.down. ConcreteProductB1
+note right of ConcreteProductB1: 具体产品B1
+class ConcreteProductB2 {}
+ProductB <|.down. ConcreteProductB2
+note right of ConcreteProductB2: 具体产品B2
+interface Factory{
+ + createProductA() : ProductA;
+ + createProductB() : ProductB;
+}
+note bottom of Factory: 工厂类可以生产属于同一产品族中的产品
+class ConcreteFactory1 {}
+Factory <|.up. ConcreteFactory1
+note right of ConcreteFactory1: 具体工厂1
+ConcreteProductA1 <.down. ConcreteFactory1
+ConcreteProductB1 <.down. ConcreteFactory1
+class ConcreteFactory2 {}
+Factory <|.up. ConcreteFactory2
+note left of ConcreteFactory2: 具体工厂2
+ConcreteProductA2 <.down. ConcreteFactory2
+ConcreteProductB2 <.down. ConcreteFactory2
+@enduml

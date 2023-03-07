@@ -1,0 +1,52 @@
+@startuml
+interface Keyboard {
+ + print() : void;
+}
+interface MainFrame {
+ + run() : void;
+}
+interface Monitor {
+ + play() : void;
+}
+class HPKeyboard {}
+class HPMainFrame {}
+class HPMonitor {}
+Keyboard <|.down.. HPKeyboard
+MainFrame <|.down.. HPMainFrame
+Monitor <|.down.. HPMonitor
+
+class DellKeyboard {}
+class DellMainFrame {}
+class DellMonitor {}
+Keyboard <|.down.. DellKeyboard
+MainFrame <|.down.. DellMainFrame
+Monitor <|.down.. DellMonitor
+
+class LenovoKeyboard {}
+class LenovoMainFrame {}
+class LenovoMonitor {}
+Keyboard <|.down.. LenovoKeyboard
+MainFrame <|.down.. LenovoMainFrame
+Monitor <|.down.. LenovoMonitor
+
+interface IFactory {
+ + createMainFrame() : MainFrame;
+ + createMonitor() : Monitor;
+ + createKeyboard : Keyboard
+}
+class HPFactory {}
+IFactory <|.up.. HPFactory
+HPKeyboard <.down.. HPFactory
+HPMainFrame <.down.. HPFactory
+HPMonitor <.down.. HPFactory
+class DellFactory {}
+IFactory <|.up.. DellFactory
+DellKeyboard <.down.. DellFactory
+DellMainFrame <.down.. DellFactory
+DellMonitor <.down.. DellFactory
+class LenovoFactory {}
+IFactory <|.up.. LenovoFactory
+LenovoKeyboard <.down.. LenovoFactory
+LenovoMainFrame <.down.. LenovoFactory
+LenovoMonitor <.down.. LenovoFactory
+@enduml

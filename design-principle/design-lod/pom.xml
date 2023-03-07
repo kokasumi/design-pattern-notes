@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>solid-lod</artifactId>
+    <artifactId>design-lod</artifactId>
     <packaging>jar</packaging>
     <description>迪米特法则（LOD）</description>
 

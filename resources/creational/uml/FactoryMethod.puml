@@ -1,0 +1,22 @@
+@startuml
+interface Product {}
+note left of Product: 抽象产品
+class ConcreteProductA {}
+Product <|.down. ConcreteProductA
+note right of ConcreteProductA: 具体产品A
+class ConcreteProductB {}
+Product <|.down. ConcreteProductB
+note left of ConcreteProductB: 具体产品B
+interface Factory{
+ + createProduct() : Product;
+}
+note bottom of Factory: 工厂类不需要知道具体的产品，创建产品逻辑下放到工厂子类中进行
+class ConcreteFactoryA {}
+Factory <|.up. ConcreteFactoryA
+note right of ConcreteFactoryA: 具体工厂A
+ConcreteProductA <.down. ConcreteFactoryA
+class ConcreteFactoryB {}
+Factory <|.up. ConcreteFactoryB
+note left of ConcreteFactoryB: 具体工厂B
+ConcreteProductB <.down. ConcreteFactoryB
+@enduml

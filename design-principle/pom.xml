@@ -23,7 +23,7 @@
         <module>solid-lsp</module>
         <module>solid-isp</module>
         <module>solid-dip</module>
-        <module>solid-lod</module>
-        <module>design-</module>
+        <module>design-lod</module>
+        <module>design-crp</module>
     </modules>
 </project>

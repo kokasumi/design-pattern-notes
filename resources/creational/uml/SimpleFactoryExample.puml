@@ -1,0 +1,14 @@
+@startuml
+interface Keyboard {
+ + print() : void;
+}
+class HPKeyboard implements Keyboard {}
+class DellKeyboard implements Keyboard {}
+class LenovoKeyboard implements Keyboard {}
+class KeyboardFactory {
+ + {static} getInstance(brand : int) : Keyboard;
+}
+HPKeyboard <.down.. KeyboardFactory
+DellKeyboard <.down.. KeyboardFactory
+LenovoKeyboard <.down.. KeyboardFactory
+@enduml

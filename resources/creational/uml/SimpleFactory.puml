@@ -1,0 +1,14 @@
+@startuml
+interface Product {}
+note left of Product: 抽象产品
+class ConcreteProductA implements Product {}
+note right of ConcreteProductA: 具体产品A
+class ConcreteProductB implements Product {}
+note left of ConcreteProductB: 具体产品B
+class Factory {
+ + createProduct(type : String) : Product;
+}
+note bottom of Factory: 工厂直接依赖于具体产品，其中包含了创建所有具体产品的逻辑
+ConcreteProductA <.. Factory
+ConcreteProductB <.. Factory
+@enduml
